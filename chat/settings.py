@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    "jazzmin",
+    # "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -143,15 +143,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "accounts.User"
 
 
-JAZZMIN_UI_TWEAKS = {
-    "theme": "cosmo",
-}
+# JAZZMIN_UI_TWEAKS = {
+#     "theme": "cosmo",
+# }
 
-JAZZMIN_SETTINGS = {
-    "site_title": "Chat Application Administration",
-    "site_header": "Chat Application Administration",
-    "site_brand": "Chat",
-    "site_logo": "admin_logo.png",
-    "copyright": "ishanchat.com",
-    "welcome_sign":"Welcome to Ishan Chat"
-}
+# JAZZMIN_SETTINGS = {
+#     "site_title": "Chat Application Administration",
+#     "site_header": "Chat Application Administration",
+#     "site_brand": "Chat",
+#     "site_logo": "admin_logo.png",
+#     "copyright": "ishanchat.com",
+#     "welcome_sign":"Welcome to Ishan Chat"
+# }
