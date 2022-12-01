@@ -155,3 +155,7 @@ JAZZMIN_SETTINGS = {
     "copyright": "ishanchat.com",
     "welcome_sign":"Welcome to Ishan Chat"
 }
+
+LOGIN_REDIRECT_URL = "core:index"
+LOGOUT_REDIRECT_URL = "accounts:login"
+LOGIN_URL = "accounts:login"

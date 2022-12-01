@@ -1,0 +1,15 @@
+{% extends 'base/layout.html' %}
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center m-2">Login</h1>
+</div>
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login" class="btn btn-outline-secondary">
+    </form>
+</div>
+{% endblock body %}
