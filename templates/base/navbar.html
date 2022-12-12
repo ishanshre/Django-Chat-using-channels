@@ -10,6 +10,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'accounts:logout' %}">Logout</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'accounts:profile' %}">{{ request.user.username|title }}</a>
+          </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'accounts:login' %}">Login</a>

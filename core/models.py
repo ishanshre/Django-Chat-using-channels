@@ -36,7 +36,7 @@ class Message(models.Model):
 
     def get_message(user):
         users = []
-        messages = Message.objects.filter(user=user).values("reciepient").annotate(last=models.Max("-created")).order_by("-last")
+        messages = Message.objects.filter(user=user).values("reciepient").annotate(last=models.Max("created")).order_by("-last")
         for message in messages:
             users.append({
                 'user': User().objects.get(pk=message['reciepient']),

@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
+from accounts.models import Profile
 
 User = get_user_model()
 
@@ -26,3 +27,9 @@ class CustomLoginForm(AuthenticationForm):
     class Meta:
         model = User
         fields = ["username","password","remember_me"]
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ["avatar","bio", "phone","street_address","city","country"]
