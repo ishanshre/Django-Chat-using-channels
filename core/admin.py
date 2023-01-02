@@ -4,5 +4,5 @@ from core.models import Message
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ['user','reciepient','body']
+    list_display = ['sender','receiver','body']
     

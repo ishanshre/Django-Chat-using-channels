@@ -22,7 +22,7 @@ class User(AbstractUser):
     facebook = models.URLField(_("facebook address"), null=True, blank=True)
     twitter = models.URLField(_("twitter address"), null=True, blank=True)
     
-
+    
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     avatar = models.ImageField(_("avatar"), upload_to="user/profile", default="profile.jpg")
@@ -32,6 +32,8 @@ class Profile(models.Model):
     city = models.CharField(_("city"), max_length=100, null=True, blank=True)
     country = models.CharField(_("country"), max_length=40, choices=COUNTRIES_CHOOSE.choices, null=True, blank=True)
 
+    def __str__(self):
+        return self.user.username
 
 
 
