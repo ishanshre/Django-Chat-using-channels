@@ -4,6 +4,7 @@ from core import views
 app_name = "core"
 
 urlpatterns = [
-    path('',views.home, name="index"),
+    path('',views.ChatListView, name="index"),
+    path('<int:pk>/detail', views.ChatDetailView, name="chat_detail")
 ]
 
