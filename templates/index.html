@@ -1,10 +1,35 @@
 {% extends 'base/layout.html' %}
 {% load static %}
 {% block title %}Home{% endblock title %}
-{% block css %} <link rel="stylesheet" href="{% static 'core/css/style.css' %}"> {% endblock css %}
+{% block css %} 
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Combo&display=swap" rel="stylesheet">
+{% endblock css %}
 
 {% block body %}
 <div class="container">
-    <h1 class="text-center m-2">Welcome to myChat</h1>
+    <div class="chat-container">
+        <div class="main">
+            <div class="chat-heading">
+                <p class="chat-heading-text">Messages</p>
+            </div>
+            {% for friend in friends %}
+            <div class="friend-box">
+                <div class="d-flex flex-row">
+                    <div>
+                        <img class="thumbnail" src="{{ friend.profile.avatar.url }}" alt="{{ friend.profile.user.username }}">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <p>{{ friend.profile.user.get_full_name }}</p>
+                        <p>How are you doing</p>
+                    </div>
+                    <div class="msg-count">
+                        0
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock body %}
