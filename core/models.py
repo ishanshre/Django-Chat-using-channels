@@ -8,7 +8,6 @@ class Message(models.Model):
     body = models.TextField(null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    is_sent = models.BooleanField(default=False)
     is_read = models.BooleanField(default=False)
 
     # send message as you start the converstation

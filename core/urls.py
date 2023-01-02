@@ -5,6 +5,5 @@ app_name = "core"
 
 urlpatterns = [
     path('',views.home, name="index"),
-    path('directs/<str:username>/',views.Directs, name="directs"),
 ]
 

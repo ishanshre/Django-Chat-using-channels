@@ -1,6 +1,7 @@
 {% extends 'base/layout.html' %}
+{% load static %}
 {% block title %}{{ request.user.username|title }}{% endblock title %}
-
+{% block css %} <link rel="stylesheet" href="{% static 'core/css/style.css' %}"> {% endblock css %}
 {% block body %}
 <div class="container">
     <div class="row">
