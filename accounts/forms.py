@@ -13,7 +13,6 @@ class CustomUserCreationForm(UserCreationForm):
 
 
 class CustomUserChangeForm(UserChangeForm):
-    password = None
     class Meta:
         model = User
         fields = ['first_name','last_name','username','email','gender','date_of_birth','facebook','twitter']
@@ -30,6 +29,7 @@ class CustomLoginForm(AuthenticationForm):
 
 
 class UserProfileForm(forms.ModelForm):
+    password=None
     class Meta:
         model = Profile
         fields = ["avatar","bio", "phone","street_address","city","country"]

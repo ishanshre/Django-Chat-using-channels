@@ -9,11 +9,13 @@ User = get_user_model()
 @receiver(signal=post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        Profile.objects.create(user=instance)
+        profile = Profile.objects.create(user=instance)
+        profile.save()
 
-@receiver(signal=post_save, sender=User)
-def save_profile(sender, instance, **kwargs):
-    instance.profile.save()
-    friend = Friend.objects.create(profile=instance.profile)
+@receiver(signal=post_save, sender=Profile)
+def save_profile(sender, instance, created, **kwargs):
+    if created:    
+        friend = Friend.objects.create(profile=instance)
+        friend.save()
 
     
