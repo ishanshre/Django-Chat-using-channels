@@ -5,6 +5,36 @@
 
 {% block body %}
 <div class="container">
-    <h1 class="text-center m-2">Welcome to myChat</h1>
+    <div class="chat-heading">
+        <p class="chat-heading-text1">{{ friend.profile.user.get_full_name }}</p>
+    </div>
+    <div class="chat-container d-flex flex-column-reverse overflow-auto">
+        <div class="main">
+            <div class="container">
+                {% for message in chatMessages %}
+                        {% if message.sender == sender_profile and message.receiver == friend_profile %}
+                        <div class="friend-box1">
+                            <p>{{ message }}</p>
+                        </div>
+                        {% elif message.sender == friend_profile and message.receiver == sender_profile %}
+                        <div class="friend-msg">
+                            <p>{{ message }}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+            </div>
+            <div class="friend-box">
+                <form action="" method="post" class="chat-body d-flex flex-row">
+                    {% csrf_token %}
+                    <div>
+                        {{ form.body }}
+                    </div>
+                    <div>
+                        <input type="submit" value="send" class="btn btn-secondary m-auto">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock body %}

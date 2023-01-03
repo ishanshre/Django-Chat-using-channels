@@ -40,6 +40,10 @@ body{
     font-size: 50px;
     font-family: 'Combo', cursive;
 }
+.chat-heading-text1{
+    font-size: 25px;
+    font-family: 'Combo', cursive;
+}
 
 .friend-box {
     box-sizing: border-box;
@@ -49,6 +53,34 @@ body{
     background-color: rgb(209, 6, 209);
     display: flex;
 }
+.friend-box1 {
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(209, 6, 209);
+    display: flex;
+    justify-content: last baseline;
+}
+.friend-box1.p {
+    margin: 10px;
+    padding: 5px;
+}
+.friend-msg {
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 5px;
+    background-color: rgb(83, 4, 83);
+    display: flex;
+    justify-content: last baseline;
+}
+.friend-msg.p {
+    margin: 10px;
+    padding: 5px;
+}
+
+
 .friend-box2 {
     margin: 5px;
 }
@@ -66,8 +98,50 @@ body{
     border-radius: 50%;
     text-align: center;
     color: white;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-self: end;
     font-size: 18px;
     
 }
+
+.chat-friend {
+    text-decoration: none;
+    color: wheat;
+}
+
+.chat-body {
+    margin: 5px;
+    padding: 4px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(95, 2, 95);        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(95, 2, 95);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid purple;  /* creates padding around scroll thumb */
+  }
+
+
+div::-webkit-scrollbar {
+    width: auto;               /* width of the entire scrollbar */
+    
+    
+  }
+  
+  div::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 30px;        /* color of the tracking area */
+  }
+  
+  div::-webkit-scrollbar-thumb {
+    background-color: rgb(78, 1, 78);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid purple;  /* creates padding around scroll thumb */
+  }

@@ -14,20 +14,22 @@
                 <p class="chat-heading-text">Messages</p>
             </div>
             {% for friend in friends %}
-            <div class="friend-box">
-                <div class="d-flex flex-row">
-                    <div>
-                        <img class="thumbnail" src="{{ friend.profile.avatar.url }}" alt="{{ friend.profile.user.username }}">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <p>{{ friend.profile.user.get_full_name }}</p>
-                        <p>How are you doing</p>
-                    </div>
-                    <div class="msg-count">
-                        0
+            <a href="{% url 'core:chat_detail' friend.profile.id %}" class="chat-friend">
+                <div class="friend-box">
+                    <div class="d-flex flex-row justify-content-between w-100">
+                        <div>
+                            <img class="thumbnail" src="{{ friend.profile.avatar.url }}" alt="{{ friend.profile.user.username }}">
+                        </div>
+                        <div class="d-flex flex-column">
+                            <p>{{ friend.profile.user.get_full_name }}</p>
+                            <p>How are you doing</p>
+                        </div>
+                        <div class="msg-count">
+                            0
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </div>
