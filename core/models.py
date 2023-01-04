@@ -19,3 +19,6 @@ class Message(models.Model):
 
     def __str__(self):
         return self.body
+
+    def count_unread(self):
+        return Message.objects.filter(is_read=False).count()

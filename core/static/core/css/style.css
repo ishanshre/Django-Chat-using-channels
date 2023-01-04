@@ -31,7 +31,11 @@ body{
     padding: 10px 10px;   
 }
 .chat-heading {
+    background-color: rgb(175, 6, 175);
+    border-radius: 30px;
     margin: 5px auto 10px auto;
+    width: 350px;
+    height: auto;
     padding: 10px;
     text-align: center;
 }
